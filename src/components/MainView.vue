@@ -19,28 +19,26 @@
                 <v-col max-width="300px">
                   <v-card
                       tile
-                      class="mx-auto"
-                      width="256"
+                      elevation="0"
+                      class="d-inline-flex"
                   >
+                    <v-list>
+                      <v-subheader>链接</v-subheader>
+                      <v-list-item-group>
+                        <v-list-item
+                            v-for="(item, i) in links"
+                            :key="i"
+                        >
+                          <v-list-item-icon>
+                            <v-icon>{{ item.icon }}</v-icon>
+                          </v-list-item-icon>
 
-
-                <v-list>
-                  <v-subheader>链接</v-subheader>
-                  <v-list-item-group>
-                    <v-list-item
-                        v-for="(item, i) in links"
-                        :key="i"
-                    >
-                      <v-list-item-icon>
-                        <v-icon>{{ item.icon }}</v-icon>
-                      </v-list-item-icon>
-
-                      <v-list-item-content>
-                        <v-btn color="primary" plain :href="item.url">{{ item.title }}</v-btn>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list-item-group>
-                </v-list>
+                          <v-list-item-content>
+                            <v-btn color="primary" plain :href="item.url">{{ item.title }}</v-btn>
+                          </v-list-item-content>
+                        </v-list-item>
+                      </v-list-item-group>
+                    </v-list>
 
 
                   </v-card>
