@@ -86,8 +86,8 @@ export default {
 
   },
   created() {
-    document.title = this.status_code ?? "未知" + "错误 | Gaein nidb 的网站";
     this.status_code = this.$route.query["code"];
+    document.title = this.status_code ?? "未知" + "错误 | Gaein nidb 的网站";
     this.getData();
   }
 }
