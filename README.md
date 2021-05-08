@@ -1,24 +1,13 @@
-# website_error_pages
+# NOTICE: THIS IS A PERSONAL WEBSITE FONT-END, PLEASE NOT USE DIRECTLY IN YOUR PROJECT.
 
-## Project setup
-```
-yarn install
-```
+## Usage
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+```bash
+git clone git@github.com:nidbCN/website_error_pages.git
+cd website_error_pages
+./build.sh
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## More
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See source code.
