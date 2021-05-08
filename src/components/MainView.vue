@@ -39,12 +39,8 @@
                         </v-list-item>
                       </v-list-item-group>
                     </v-list>
-
-
                   </v-card>
-
                 </v-col>
-
               </v-row>
             </v-card-text>
           </v-card>
@@ -57,6 +53,7 @@
 
 <script>
 import Axios from 'axios';
+import config from "../config";
 
 export default {
   name: 'MainView',
@@ -71,11 +68,11 @@ export default {
   }),
   methods: {
     getData() {
-      Axios.get("https://static.cdn.gaein.cn/website_used/error_page_data.json")
+      Axios.get(config.dataUrl)
           .then(response => {
             const response_data = response.data;
-            this.message_body = response_data.codes[this.status_code] ?? {
-              msg: "啊！这个状态码是什么意思嘛...",
+            this.message_body = response_data["codes"][this.status_code] ?? {
+              msg: config.defaultMsg.msg,
               details: `我的存储器中并没有关于 HTTP ${this.status_code} 的记录，看来需要好好学习呢...`
             };
             console.log(this.message_body);
@@ -89,9 +86,9 @@ export default {
 
   },
   created() {
+    document.title = this.status_code ?? "未知" + "错误 | Gaein nidb 的网站";
     this.status_code = this.$route.query["code"];
     this.getData();
-
   }
 }
 </script>
